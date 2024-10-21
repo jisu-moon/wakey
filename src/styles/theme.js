@@ -22,10 +22,29 @@ export const lightTheme = {
       text: '#6e6e73',
     },
   },
+  borderRadius: {
+    xl: '2rem',
+    md: '1rem',
+    xs: '0.5rem',
+  },
+  padding: {
+    xxl: '2rem',
+    xl: '1.5rem',
+    md: '1.25rem',
+    sm: '1rem',
+    xs: '0.75rem',
+    xxs: '0.5rem',
+  },
   flexCenter: css`
     display: flex;
     justify-content: center;
     align-items: center;
+  `,
+  absoluteCenter: css`
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   `,
 };
 

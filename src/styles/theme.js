@@ -15,8 +15,8 @@ export const lightTheme = {
   colors: {
     background: '#fff',
     text: '#1d1d1f',
-    primary: '#e8c537',
-    accent: '#2563EB',
+    primary: '#2563EB',
+    accent: '#e8c537',
     gray: {
       background: '#f5f5f7',
       text: '#6e6e73',

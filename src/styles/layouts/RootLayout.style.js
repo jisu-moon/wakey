@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-export const Wrapper = styled.main`
+export const Container = styled.main`
   font-size: 16px;
 `;
 

@@ -1,4 +1,4 @@
-import * as S from '../../styles/components/Header.style';
+import * as S from '../../styles/components/UI/Header.style';
 import Logo from './Logo';
 
 export default function Header() {

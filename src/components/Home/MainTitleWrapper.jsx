@@ -6,7 +6,8 @@ import { useScroll, useTransform } from 'framer-motion';
 
 export default function MainTitleWrapper() {
   const { scrollY } = useScroll();
-  const circleScale = useTransform(scrollY, [0, window.innerHeight], [0, 50]);
+  const circleScale = useTransform(scrollY, [20, window.innerHeight], [0, 150]);
+
   return (
     <S.Wrapper>
       <S.Title>
@@ -37,8 +38,9 @@ export default function MainTitleWrapper() {
           style={{ scale: circleScale, x: '-50%', y: '-50%' }}
         />
         <Circle size={0.8} />
-        <Circle size={0.9} />
+        <Circle size={0.95} />
         <Circle size={1.3} />
+        <Circle size={1.7} />
       </S.CircleWrapper>
     </S.Wrapper>
   );

@@ -20,24 +20,30 @@ export const Content = styled.div`
   animation: ${waveAnimation} 1.5s ${({ size }) => `${size}s`} ease-in-out
     infinite;
   border-radius: 50%;
-  border: 1px solid ${({ theme }) => theme.colors.primary};
-  opacity: 0.5;
+  border: 2px solid ${({ theme }) => theme.colors.primary};
+  opacity: 0.2;
   transform-origin: center center;
   ${({ theme }) => theme.absoluteCenter}
   ${media.mobile`
-    width: ${({ size }) => `calc(100vw * ${size})`};
-    height: ${({ size }) => `calc(100vw * ${size})`};
-  `}
+    width: ${({ size }) => `calc(60vh * ${size})`};
+    height: ${({ size }) => `calc(60vh * ${size})`};
+  `};
+  box-shadow: inset 0 0px 80px rgba(255, 255, 255, 0.3);
 `;
 
 export const MotionContent = styled(Content).attrs({
   as: motion.div,
 })`
-  width: 50px;
-  height: 50px;
+  width: 1vw;
+  height: 1vw;
   animation: none;
   border: 0;
   background: ${({ theme }) => theme.colors.primary};
   opacity: 1;
   transform: translate(-50%, -50%) scale(0);
+  ${media.mobile`
+    width:1vh;
+    height:1vh;
+  `}
+  box-shadow:none;
 `;

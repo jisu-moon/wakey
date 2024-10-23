@@ -1,30 +1,27 @@
-import { useLayoutEffect, useState } from 'react';
+import { useCallback, useLayoutEffect, useRef, useState } from 'react';
 
-function useViewport() {
-  const [width, setWidth] = useState(0);
-  const [height, setHeight] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  const handleResize = () => {
-    setWidth(window.innerWidth);
-    setHeight(window.innerHeight);
-    setIsMobile(window.innerWidth <= 768 || window.outerWidth <= 768);
-  };
+const useViewport = () => {
+  const ref = useRef(null);
+  const [viewport, setViewport] = useState({ y: 0, height: 0 });
+  const viewportHandler = useCallback(() => {
+    const { top, height } = ref.current.getBoundingClientRect();
+    const y = window.scrollY + top;
+    if (y !== viewport.y) {
+      setViewport({ y, height });
+    }
+  }, [viewport]);
 
   useLayoutEffect(() => {
-    handleResize();
-    setIsLoaded(true);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
+    viewportHandler();
+    window.addEventListener('resize', viewportHandler);
+    return () => {
+      window.removeEventListener('resize', viewportHandler);
+    };
+  }, [viewportHandler]);
   return {
-    width,
-    height,
-    isMobile,
-    isLoaded,
+    ref,
+    viewport,
   };
-}
+};
 
 export default useViewport;

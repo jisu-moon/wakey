@@ -7,31 +7,15 @@ export const Container = styled.section`
   height: ${({ height }) => height || 'auto'};
   background: ${({ theme, $background }) =>
     theme.colors[$background] || 'transparent'};
-  z-index: ${({ $zIndex }) => $zIndex};
   padding-top: ${({ $paddingTop }) => $paddingTop};
+  height: 200vh;
 `;
 
 export const Container2 = styled(Container)`
-  height: 200vh;
+  /* height: 500vh; */
+  /* background: ${({ theme }) => theme.colors.primary}; */
+  margin-top: 23vh;
   ${media.mobile`
-    height:120vh;
-  `}
-`;
-
-export const WhyTextWrapper = styled.div`
-  padding-top: 150vh;
-  position: relative;
-  z-index: 5;
-  p {
-    font-weight: 700;
-    font-size: ${({ theme }) => theme.fontSize.xl};
-    color: #fff;
-    text-align: center;
-    line-height: 1.2;
-  }
-  ${media.mobile`
-    p{
-        font-size: ${({ theme }) => theme.fontSize.mdSub};
-    }
-  `}
+    margin-top:0;
+  `};
 `;

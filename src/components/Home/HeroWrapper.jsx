@@ -4,10 +4,11 @@ import PropTypes from 'prop-types';
 import Circle from '../Common/Circle';
 import { useScroll, useTransform } from 'framer-motion';
 
-export default function MainTitleWrapper() {
+export default function HeroWrapper() {
   const { scrollY } = useScroll();
-  const circleScale = useTransform(scrollY, [20, window.innerHeight], [0, 150]);
+  const windowHeight = window.innerHeight;
 
+  const circleScale = useTransform(scrollY, [20, windowHeight], [0, 145]);
   return (
     <S.Wrapper>
       <S.Title>
@@ -37,16 +38,16 @@ export default function MainTitleWrapper() {
           motion={true}
           style={{ scale: circleScale, x: '-50%', y: '-50%' }}
         />
-        <Circle size={0.8} />
-        <Circle size={0.95} />
-        <Circle size={1.3} />
-        <Circle size={1.7} />
+        <Circle size={1.2} />
+        <Circle size={1.4} />
+        <Circle size={1.9} />
+        <Circle size={2.4} />
       </S.CircleWrapper>
     </S.Wrapper>
   );
 }
 
-MainTitleWrapper.propTypes = {
+HeroWrapper.propTypes = {
   children: PropTypes.node,
   tag: PropTypes.string,
 };

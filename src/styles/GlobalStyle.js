@@ -11,6 +11,7 @@ const GlobalStyle = createGlobalStyle`
   }
   body:lang(ko) {
     font-family: 'Noto Sans', sans-serif; /* 한글 폰트 설정 */
+    letter-spacing: -0.45px;
   }
   a, button {
     cursor: pointer;

@@ -3,10 +3,8 @@ import { css } from 'styled-components';
 export const lightTheme = {
   fontSize: {
     xxl: '5rem', // 78px
-    xxlSub: '4.5rem', // 72px
     xl: '3rem', // 48px
-    xlSub: '2.625rem', // 42px
-    md: '1.75rem', // 28px
+    md: '2rem', // 28px
     mdSub: '1.375rem', // 22px
     sm: '1rem', // 16px
     xs: '0.875rem', // 14px
@@ -20,6 +18,9 @@ export const lightTheme = {
     gray: {
       background: '#f5f5f7',
       text: '#6e6e73',
+    },
+    gradient: {
+      primaryToTransparent: 'linear-gradient(90deg, #2563EB, transparent)',
     },
   },
   borderRadius: {

@@ -32,7 +32,7 @@ export const Content = styled.div`
     width: ${({ size }) => `calc(80vw * ${size})`};
     height: ${({ size }) => `calc(80vw * ${size})`};
   `};
-  box-shadow: inset 0 0px 80px rgba(255, 255, 255, 0.3);
+  box-shadow: inset 0 0px 80px ${({ theme }) => theme.colors.background};
 `;
 
 export const MotionContent = styled(Content).attrs({

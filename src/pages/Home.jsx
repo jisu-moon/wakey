@@ -12,6 +12,7 @@ export default function Home() {
       <S.Container2>
         <WhyWrapper />
       </S.Container2>
+      <S.Container></S.Container>
     </>
   );
 }

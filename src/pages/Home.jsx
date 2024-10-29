@@ -6,13 +6,12 @@ import * as S from '../styles/pages/Home.style';
 export default function Home() {
   return (
     <>
+      <HeroWrapper />
+      <WhyWrapper />
       <S.Container>
-        <HeroWrapper />
+        <p>fsdjkflsjd</p>
+        <p>어나러나ㅣ</p>
       </S.Container>
-      <S.Container2>
-        <WhyWrapper />
-      </S.Container2>
-      <S.Container></S.Container>
     </>
   );
 }

@@ -23,7 +23,6 @@ export const Container = styled.section`
 
   ${LogoText} {
     font-size: ${({ theme }) => theme.fontSize.md};
-    color: #000;
   }
 
   ${media.mobile`    

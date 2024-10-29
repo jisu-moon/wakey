@@ -1,10 +1,4 @@
-import {
-  motion,
-  useMotionValueEvent,
-  useScroll,
-  useTransform,
-} from 'framer-motion';
-import { useTheme } from 'styled-components';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 import * as S from '../../styles/components/Home/WhyWrapper.style';
 import { useRef } from 'react';
@@ -41,16 +35,10 @@ const textMotionY = ['150%', '0%', '0%', '-75%'];
 
 export default function WhyWrapper() {
   const ref = useRef(null);
-  const theme = useTheme();
 
-  console.log(theme);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start end', 'end end'],
-  });
-
-  useMotionValueEvent(scrollYProgress, 'change', latest => {
-    console.log(latest);
   });
 
   const topX = useTransform(
@@ -197,14 +185,14 @@ export default function WhyWrapper() {
   ]);
 
   return (
-    <S.WhyTextWrapper ref={ref}>
-      <S.StickyWrapper>
-        <div className='sticky sideGradient'>
+    <S.Container ref={ref}>
+      <div className='sticky-wrapper'>
+        <div className='sticky side-gradient'>
           <motion.p className='top' style={{ x: topX }}>
             우리가 왜 웨이키냐구요?
           </motion.p>
         </div>
-        <div className='positionCenter'>
+        <div className='position-center'>
           <motion.p
             style={{
               opacity: textOpacity,
@@ -230,7 +218,7 @@ export default function WhyWrapper() {
             시작하셨을꺼예요
           </motion.p>
         </div>
-        <div className='positionCenter'>
+        <div className='position-center'>
           <motion.p
             style={{
               opacity: textOpacity4,
@@ -248,7 +236,7 @@ export default function WhyWrapper() {
             하시는분들도 계실거에요!
           </motion.p>
         </div>
-        <div className='positionCenter'>
+        <div className='position-center'>
           <motion.p
             className='sub'
             style={{
@@ -275,7 +263,7 @@ export default function WhyWrapper() {
             매출은 잘나오는데 왜 수익은 적지?
           </motion.p>
         </div>
-        <div className='positionCenter'>
+        <div className='position-center'>
           <motion.p
             style={{
               opacity: textOpacity9,
@@ -302,7 +290,7 @@ export default function WhyWrapper() {
             이렇게 생각하셨죠?
           </motion.p>
         </div>
-        <div className='positionCenter'>
+        <div className='position-center'>
           <motion.p
             style={{
               opacity: textOpacity12,
@@ -329,7 +317,7 @@ export default function WhyWrapper() {
             1대1 맞춤형으로 진단하고 맞추형 솔루션을 제공합니다.
           </motion.p>
         </div>
-      </S.StickyWrapper>
-    </S.WhyTextWrapper>
+      </div>
+    </S.Container>
   );
 }

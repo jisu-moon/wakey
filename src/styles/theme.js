@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
 
-export const lightTheme = {
+const commonTheme = {
   fontSize: {
     xxl: '5rem', // 78px
     xl: '3rem', // 48px
@@ -9,19 +9,6 @@ export const lightTheme = {
     sm: '1rem', // 16px
     xs: '0.875rem', // 14px
     xxs: '0.75rem', // 12px
-  },
-  colors: {
-    background: '#fff',
-    text: '#1d1d1f',
-    primary: '#2563EB',
-    accent: '#e8c537',
-    gray: {
-      background: '#f5f5f7',
-      text: '#6e6e73',
-    },
-    gradient: {
-      primaryToTransparent: 'linear-gradient(90deg, #2563EB, transparent)',
-    },
   },
   borderRadius: {
     xl: '2rem',
@@ -47,15 +34,38 @@ export const lightTheme = {
     left: 50%;
     transform: translate(-50%, -50%);
   `,
+  colors: {
+    gray: {
+      background: '#f5f5f7',
+      text: '#6e6e73',
+    },
+  },
+};
+
+export const lightTheme = {
+  ...commonTheme,
+  colors: {
+    ...commonTheme.colors,
+    background: '#fff',
+    text: '#1d1d1f',
+    primary: '#2563EB',
+    accent: '#e8c537',
+    gradient: {
+      primaryToTransparent: 'linear-gradient(90deg, #2563EB, transparent)',
+    },
+  },
 };
 
 export const darkTheme = {
-  ...lightTheme,
+  ...commonTheme,
   colors: {
-    ...lightTheme.colors,
-    background: '#333',
+    ...commonTheme.colors,
+    background: '#1d1d1f',
     text: '#FFF',
-    primary: '#b2a120',
-    accent: '#1D4D9B',
+    primary: '#1D4D9B',
+    accent: '#b2a120',
+    gradient: {
+      primaryToTransparent: 'linear-gradient(90deg, #1D4D9B, transparent)',
+    },
   },
 };

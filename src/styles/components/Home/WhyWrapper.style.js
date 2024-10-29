@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import media from '../../media';
 
-export const WhyTextWrapper = styled.div`
+export const Container = styled.section`
+  margin-top: 23vh;
   height: 500vh;
   background: ${({ theme }) => theme.colors.primary};
   position: relative;
@@ -13,7 +14,13 @@ export const WhyTextWrapper = styled.div`
     font-size: ${({ theme }) => theme.fontSize.xl};
     color: #fff;
     text-align: center;
-    line-height: 1.2;
+    line-height: 1.3;
+  }
+  .sticky-wrapper {
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    left: 0;
   }
   .sub {
     font-size: ${({ theme }) => theme.fontSize.md};
@@ -29,7 +36,7 @@ export const WhyTextWrapper = styled.div`
     top: 50%;
     transform: translateY(-50%);
   }
-  .sideGradient {
+  .side-gradient {
     &::before,
     &::after {
       content: '';
@@ -68,18 +75,16 @@ export const WhyTextWrapper = styled.div`
       right: 0;
     }
   }
-  .positionCenter {
+  .position-center {
     width: 100%;
     ${({ theme }) => theme.absoluteCenter};
   }
-  .circleWrapper {
-    height: 100vh;
-    background: #fff;
-    margin-top: 300vh;
-    position: relative;
-    z-index: 2;
-  }
+  ${media.table`
+    margin-top:35vh;
+    `}
   ${media.mobile`
+  
+    margin-top:0;
     .top{
         font-size: calc(100vw / 12);
     }
@@ -95,11 +100,4 @@ export const WhyTextWrapper = styled.div`
         margin-top:0.5rem;
     }
   `}
-`;
-
-export const StickyWrapper = styled.div`
-  height: 100vh;
-  position: sticky;
-  top: 0;
-  left: 0;
 `;

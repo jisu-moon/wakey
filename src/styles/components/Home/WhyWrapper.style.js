@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import media from '../../media';
+import { motion } from 'framer-motion';
 
-export const Container = styled.section`
+export const Container = styled(motion.section)`
   margin-top: 23vh;
   height: 500vh;
   background: ${({ theme }) => theme.colors.primary};
@@ -25,11 +26,11 @@ export const Container = styled.section`
   .sub {
     font-size: ${({ theme }) => theme.fontSize.md};
     color: ${({ theme }) => theme.colors.accent};
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
   }
   .sub.m-t {
     margin-bottom: 0;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
   }
   .sticky {
     position: sticky;
@@ -93,11 +94,5 @@ export const Container = styled.section`
     }
     .sub{
         font-size: ${({ theme }) => theme.fontSize.sm};
-        margin-bottom:0.5rem;
-    }
-    .sub.m-t{
-        margin-bottom:0;
-        margin-top:0.5rem;
-    }
   `}
 `;

@@ -2,6 +2,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 
 import * as S from '../../styles/components/Home/WhyWrapper.style';
 import { useRef } from 'react';
+import { useTheme } from 'styled-components';
 
 const textMotionRatios = {
   first: [
@@ -34,6 +35,7 @@ const textMotionOpacity = [0, 1, 1, 0];
 const textMotionY = ['150%', '0%', '0%', '-75%'];
 
 export default function WhyWrapper() {
+  const theme = useTheme();
   const ref = useRef(null);
 
   const { scrollYProgress } = useScroll({
@@ -41,11 +43,17 @@ export default function WhyWrapper() {
     offset: ['start end', 'end end'],
   });
 
+  const bgMotion = useTransform(
+    scrollYProgress,
+    [0.955, 1],
+    [theme.colors.primary, '#000'],
+  );
   const topX = useTransform(
     scrollYProgress,
     [0.05, 0.18, 0.23, 0.35],
     ['100%', '0%', '0%', '-100%'],
   );
+  const topOpacity = useTransform(scrollYProgress, [0.349, 0.35], [1, 0]);
   const textOpacity = useTransform(
     scrollYProgress,
     textMotionRatios.first[0],
@@ -185,13 +193,23 @@ export default function WhyWrapper() {
   ]);
 
   return (
-    <S.Container ref={ref}>
+    <S.Container
+      ref={ref}
+      style={{
+        background: bgMotion,
+      }}
+    >
       <div className='sticky-wrapper'>
-        <div className='sticky side-gradient'>
+        <motion.div
+          className='sticky side-gradient'
+          style={{
+            opacity: topOpacity,
+          }}
+        >
           <motion.p className='top' style={{ x: topX }}>
             우리가 왜 웨이키냐구요?
           </motion.p>
-        </div>
+        </motion.div>
         <div className='position-center'>
           <motion.p
             style={{

@@ -2,5 +2,6 @@ import styled from 'styled-components';
 
 export const Container = styled.section`
   position: relative;
-  height: 200vh;
+  height: 100vh;
+  background: #000;
 `;

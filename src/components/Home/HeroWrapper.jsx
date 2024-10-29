@@ -10,7 +10,7 @@ export default function HeroWrapper() {
 
   const circleScale = useTransform(scrollY, [20, windowHeight], [0, 145]);
   return (
-    <S.StickyContainer>
+    <S.Container>
       <S.StickyWrapper>
         <S.Title>
           <TypeIt
@@ -45,7 +45,7 @@ export default function HeroWrapper() {
           <Circle size={2.4} />
         </S.CircleWrapper>
       </S.StickyWrapper>
-    </S.StickyContainer>
+    </S.Container>
   );
 }
 

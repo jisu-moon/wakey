@@ -1,15 +1,17 @@
-import { Outlet, useLocation, useParams } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import Header from '../components/Profit/Header';
 import SideNav from '../components/Profit/SideNav';
 
+import * as S from '../styles/layouts/ProfitLayout.style';
+
 export default function ProfitLayout() {
-  //   const params = useParams();
-  //   const a = useLocation();
   return (
-    <>
-      <Header />
+    <S.Container>
       <SideNav />
-      <Outlet />
-    </>
+      <S.Contents>
+        <Header />
+        <Outlet />
+      </S.Contents>
+    </S.Container>
   );
 }

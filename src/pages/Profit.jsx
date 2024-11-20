@@ -1,3 +1,3 @@
 export default function Profit() {
-  return <main>Profit</main>;
+  return <section>Profit</section>;
 }

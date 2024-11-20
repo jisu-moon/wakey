@@ -1,15 +1,15 @@
 import { Outlet } from 'react-router-dom';
-import Header from '../components/Profit/Header';
-import SideNav from '../components/Profit/SideNav';
+import ProfitHeader from '../components/Profit/ProfitHeader';
+import ProfitSideNav from '../components/Profit/ProfitSideNav';
 
 import * as S from '../styles/layouts/ProfitLayout.style';
 
 export default function ProfitLayout() {
   return (
     <S.Container>
-      <SideNav />
+      <ProfitSideNav />
       <S.Contents>
-        <Header />
+        <ProfitHeader />
         <Outlet />
       </S.Contents>
     </S.Container>

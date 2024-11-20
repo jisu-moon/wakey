@@ -3,15 +3,10 @@ import { LogoText } from '../UI/Logo.style';
 
 export const Container = styled.aside`
   flex: 0 0 15%;
-  padding: 2rem 0rem 1rem 0;
-  ${LogoText} {
-    font-size: ${({ theme }) => theme.fontSize.md};
-    color: #fff;
-    margin-left: 1rem;
-  }
+  padding: 2rem 0rem 2rem 0;
   display: flex;
   flex-direction: column;
-  gap: 5rem;
+  justify-content: space-between;
 `;
 
 export const Navigation = styled.nav`
@@ -47,5 +42,12 @@ export const Navigation = styled.nav`
     &.active svg {
       color: ${({ theme }) => theme.colors.accent};
     }
+  }
+  ${LogoText} {
+    font-size: ${({ theme }) => theme.fontSize.md};
+    color: #fff;
+    margin-left: 1rem;
+    margin-bottom: 5rem;
+    display: block;
   }
 `;

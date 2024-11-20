@@ -1,8 +1,8 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Home from './pages/Home';
+import Home from './pages/Home/Home';
 import HomeLayout from './layouts/HomeLayout';
 import ProfitLayout from './layouts/ProfitLayout';
-import Profit from './pages/Profit';
+import ProfitHome from './pages/Profit/ProfitHome';
 
 const router = createBrowserRouter([
   {
@@ -22,7 +22,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: '',
-        element: <Profit />,
+        element: <ProfitHome />,
         index: true,
       },
       {

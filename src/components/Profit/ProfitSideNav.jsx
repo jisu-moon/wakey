@@ -11,12 +11,13 @@ import {
 } from 'react-icons/bs';
 
 import { AiOutlineDashboard } from 'react-icons/ai';
+import UserProfile from './UserProfile';
 
-export default function SideNav() {
+export default function ProfitSideNav() {
   return (
     <S.Container>
-      <Logo />
       <S.Navigation>
+        <Logo />
         <ul>
           <li>
             <NavLink
@@ -61,11 +62,12 @@ export default function SideNav() {
               className={({ isActive }) => (isActive ? 'active' : '')}
             >
               <BsGear />
-              <span>계정설정</span>
+              <span>설정</span>
             </NavLink>
           </li>
         </ul>
       </S.Navigation>
+      <UserProfile />
     </S.Container>
   );
 }

@@ -12,6 +12,7 @@ export const Container = styled.main`
 export const Contents = styled.section`
   flex: 1 1 85%;
   border-radius: 1rem;
-  padding: 2rem;
   background: ${({ theme }) => theme.colors.background};
+  overflow-x: hidden;
+  overflow-y: scroll;
 `;

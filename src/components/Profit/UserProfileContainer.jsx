@@ -1,6 +1,6 @@
-import * as S from '../../styles/components/Profit/UserProfile.style';
+import * as S from '../../styles/components/Profit/UserProfileContainer.style';
 
-export default function UserProfile() {
+export default function UserProfileContainer() {
   return (
     <S.Container>
       <img

@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 
-import * as S from '../../styles/components/Profit/SideNav.style';
+import * as S from '../../styles/components/Profit/ProfitSideNav.style';
 import Logo from '../UI/Logo';
 
 import {
@@ -11,7 +11,7 @@ import {
 } from 'react-icons/bs';
 
 import { AiOutlineDashboard } from 'react-icons/ai';
-import UserProfile from './UserProfile';
+import UserProfileContainer from './UserProfileContainer';
 
 export default function ProfitSideNav() {
   return (
@@ -35,7 +35,7 @@ export default function ProfitSideNav() {
               className={({ isActive }) => (isActive ? 'active' : '')}
             >
               <BsCalendar2Date />
-              <span>일자별 매출/이익금</span>
+              <span>일별 매출/이익금</span>
             </NavLink>
           </li>
           <li>
@@ -67,7 +67,7 @@ export default function ProfitSideNav() {
           </li>
         </ul>
       </S.Navigation>
-      <UserProfile />
+      <UserProfileContainer />
     </S.Container>
   );
 }

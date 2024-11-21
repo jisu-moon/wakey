@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { LogoText } from '../UI/Logo.style';
 
 export const Container = styled.aside`
-  flex: 0 0 15%;
+  flex: 0 0 12.5%;
   padding: 2rem 0rem 2rem 0;
   display: flex;
   flex-direction: column;

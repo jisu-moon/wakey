@@ -13,6 +13,7 @@ export const Item = styled.div`
   border-radius: 0.5rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
   h3 {
     font-weight: 600;
     font-size: 0.875rem;
@@ -26,11 +27,11 @@ export const Item = styled.div`
 
   .prev-price-wrapper {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     gap: 0.5rem;
     margin-top: 0.25rem;
     span {
-      padding-left: 0.875rem;
+      padding-left: 0.6rem;
       color: ${({ $rateOfChange }) => ($rateOfChange ? 'red' : 'blue')};
       font-weight: 700;
       border-radius: 0.25rem;
@@ -41,7 +42,7 @@ export const Item = styled.div`
         position: absolute;
         top: 50%;
         left: 0;
-        transform: translate(0%, -55%)
+        transform: translate(-25%, -55%)
           rotate(${({ $rateOfChange }) => ($rateOfChange ? '0' : '180deg')});
       }
     }

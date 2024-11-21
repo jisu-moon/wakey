@@ -17,7 +17,7 @@ export const Container = styled.div`
     border: 1px solid ${({ theme }) => theme.colors.primary};
     padding: 0.5rem 1rem;
     transition: 0.3s;
-    border-radius: 0.25rem;
+    border-radius: 0.5rem;
   }
   label:hover {
     background: ${({ theme }) => theme.colors.primary};

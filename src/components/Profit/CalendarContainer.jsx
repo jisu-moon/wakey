@@ -1,15 +1,17 @@
 import { useState } from 'react';
-import moment from 'moment/moment';
 import Calendar from 'react-calendar/dist/cjs/Calendar.js';
-import { dateFormat, daysDifference } from '../../utils/format';
+import {
+  dateFormat,
+  getDaysDifference,
+  getYesterday,
+} from '../../utils/dateUtils';
 
 import * as S from '../../styles/components/Profit/CalenderContainer.style';
 import 'react-calendar/dist/Calendar.css';
-import { BsCalendar2Date } from 'react-icons/bs';
+import { BsCalendar } from 'react-icons/bs';
 
 export default function CalendarContainer() {
-  const yesterday = moment().subtract(1, 'day').toDate();
-
+  const yesterday = getYesterday();
   const [value, onChange] = useState([yesterday, yesterday]);
   const [nowDate, setNowDate] = useState(
     `${dateFormat(yesterday)} - ${dateFormat(yesterday)}`,
@@ -31,9 +33,9 @@ export default function CalendarContainer() {
         onClick={toggleCalendarHandle}
         className={isOpen && 'open'}
       >
-        <BsCalendar2Date />
+        <BsCalendar />
         <p>{nowDate},&nbsp;</p>
-        <p>{daysDifference(value)}일간</p>
+        <p>{getDaysDifference(value)}일간</p>
       </S.DropdownButton>
       <S.CalendarWrapper className={isOpen && 'open'}>
         <Calendar

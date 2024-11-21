@@ -12,7 +12,7 @@ export const Container = styled.main`
 export const Contents = styled.section`
   flex: 1 1 85%;
   border-radius: 1rem;
-  background: ${({ theme }) => theme.colors.background};
+  background: ${({ theme }) => theme.colors.gray.background};
   overflow-x: hidden;
   overflow-y: scroll;
 `;

@@ -25,18 +25,18 @@ const router = createBrowserRouter([
         element: <ProfitHome />,
         index: true,
       },
-      // {
-      //   path: 'daily',
-      // },
-      // {
-      //   path: 'product',
-      // },
-      // {
-      //   path: 'benchmarking',
-      // },
-      // {
-      //   path: 'setting',
-      // },
+      {
+        path: 'daily',
+      },
+      {
+        path: 'product',
+      },
+      {
+        path: 'benchmarking',
+      },
+      {
+        path: 'setting',
+      },
     ],
   },
 ]);

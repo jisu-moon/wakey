@@ -6,7 +6,7 @@ const DUMMYDATAS = [
   { title: '광고비', price: 5000, prevPrice: 50000 },
   { title: '이익금', price: 450000000, prevPrice: 400000000 },
   {
-    title: '수익금',
+    title: '수익률',
     price: 550000000,
     prevPrice: 500000000,
   },

@@ -28,7 +28,6 @@ export default function CalendarContainer() {
 
   return (
     <S.Container>
-      <h2>날짜선택</h2>
       <S.DropdownButton
         onClick={toggleCalendarHandle}
         className={isOpen && 'open'}
